@@ -42,8 +42,16 @@ class EmployerController extends Controller
         $request->validate([
            'Nom' => 'required|string|min:3|max:50',
             'Prénom' => 'required|string|min:3|max:50',
-
+            'age' => 'required|int|min:1|max:3',
+            'code_employer' => 'required|int|min:1|max:3',
         ]);
+        Employer::create([
+                'Nom' => $request->Nom,
+                'Prénom' =>$request->Prénom,
+                'age' =>$request->age,
+                'code_employer' =>$request->code_employer
+        ]);
+
         return $request;
     }
 

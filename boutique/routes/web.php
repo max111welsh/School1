@@ -20,6 +20,7 @@ Route::resource('étudiants',\App\Http\Controllers\EtudiantController::class)->o
     'index','show'
 ]);
 Route::resource('employers',\App\Http\Controllers\EmployerController::class)->only([
-    'index','show','create'
+    'index'
 ]);
-
+Route::get('employers',[\App\Http\Controllers\EmployerController::class,'show']);
+Route::post('employers',[\App\Http\Controllers\EmployerController::class,'create']);

@@ -9,6 +9,15 @@ class Employer extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+      'Nom',
+        'Prénom',
+        'age',
+        'code_employer'
+
+    ];
+
     public function  proprio(){
         return $this->belongsTo(User::class,'user_id');
     }
